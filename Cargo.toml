@@ -7,4 +7,5 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+once_cell = "1.10.0"
 wasm-bindgen = "0.2.79"

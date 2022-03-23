@@ -3,15 +3,15 @@
 let wasm = require('./pkg');
 
 function f() {
-  let mrf = wasm.get_mrf();
 
-  for (var i = 0; i < 30; i++) {
-    mrf.stuff("fish" + i);
+  for (var i = 0; i < Math.floor(Math.random() * 373737); i++) {
+    wasm.submit_input("fish" + i);
   }
 
-  mrf.what();
+  console.log("total: " + wasm.get_results());
 }
 
-for (var i = 0; i < 30; i++) {
+while (true) {
   f();
+  console.log(process.pid);
 }
