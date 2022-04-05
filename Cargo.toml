@@ -2,10 +2,22 @@
 name = "glowing-giggle"
 version = "0.1.0"
 edition = "2021"
+exclude = ["index.node"]
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
 once_cell = "1.10.0"
-wasm-bindgen = "0.2.79"
+wasm-bindgen = {version="0.2.79", optional=true}
+
+[dependencies.neon]
+version = "0.10"
+default-features = false
+features = ["napi-6"]
+
+[features]
+wasm-bindings = ["wasm-bindgen"]
+neon-bindings = []
+
+default=["neon-bindings"]

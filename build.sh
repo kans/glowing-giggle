@@ -2,4 +2,4 @@
 
 set -ex
 
-wasm-pack build --no-typescript --out-dir "pkg" --target nodejs
+wasm-pack build --no-typescript --out-dir "pkg" --target nodejs --no-default-features
